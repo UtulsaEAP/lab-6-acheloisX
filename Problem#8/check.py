@@ -1,6 +1,11 @@
 def in_order(nums):
-    # Type your code here.
-    
+    # Iterate through the list of integers
+    for i in range(len(nums) - 1):
+        # Check if the current integer is greater than the next one
+        if nums[i] > nums[i + 1]:
+            return False  # If it is, the list is not sorted
+    return True  # If no out-of-order pair is found, the list is sorted
+
 if __name__ == '__main__':
     # Test out-of-order example
     nums1 = [5, 6, 7, 8, 3]
