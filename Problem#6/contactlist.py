@@ -3,6 +3,10 @@ def process_user_contacts(user_input):
     
     tokens = user_input.split(',')
 
+    if len(tokens) % 2 != 0:
+        print("Invalid input. Each name should be followed by a phone number.")
+        return
+
     for i in range(0, len(tokens), 2):
         name = tokens[i].strip()  
         phone_number = tokens[i + 1].strip()  
@@ -11,10 +15,6 @@ def process_user_contacts(user_input):
     contact_name = input("Enter the contact name: ")
 
     if contact_name in user_contacts:
-        # Output contact's phone number
         print(user_contacts[contact_name])
     else:
         print("Contact not found.")
-if __name__ == '__main__':
-    user_input = input("Enter word pairs (name, phone number): ")
-    process_user_contacts(user_input)
